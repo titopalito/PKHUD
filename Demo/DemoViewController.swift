@@ -19,7 +19,9 @@ class DemoViewController: UIViewController {
     }
 
     @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
-        HUD.flash(.success, delay: 2.0)
+//        HUD.flash(.success, delay: 2.0)
+//        HUD.flash(.image(UIImage(named: "progress")), delay: 2.0)
+        HUD.flash(.labeledImageBigText(image: UIImage(named: "progress"), title: "qwe rqwr qw", subtitle: "asdasdad sfhk sjhflkshflk sdflakjhlkfhdlkfahdkf aldkshalksd jaljflhflsdhlfkjaflasfljsdflkashdl fkjdslfkdslkfsd fsd flkslkjasd"), delay: 2.0)
     }
 
     @IBAction func showAnimatedErrorHUD(_ sender: AnyObject) {

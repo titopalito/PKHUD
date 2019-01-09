@@ -20,6 +20,7 @@ public enum HUDContentType {
     case labeledError(title: String?, subtitle: String?)
     case labeledProgress(title: String?, subtitle: String?)
     case labeledImage(image: UIImage?, title: String?, subtitle: String?)
+    case labeledImageBigText(image: UIImage?, title: String?, subtitle: String?)
     case labeledRotatingImage(image: UIImage?, title: String?, subtitle: String?)
 
     case label(String?)
@@ -105,13 +106,15 @@ public final class HUD {
             return PKHUDSquareBaseView(image: image, title: title, subtitle: subtitle)
         case let .labeledRotatingImage(image, title, subtitle):
             return PKHUDRotatingImageView(image: image, title: title, subtitle: subtitle)
-
+        case let .labeledImageBigText(image, title, subtitle):
+            return PKHUDStaticImageView(image: image, title: title, subtitle: subtitle)
         case let .label(text):
             return PKHUDTextView(text: text)
         case .systemActivity:
             return PKHUDSystemActivityIndicatorView()
         case let .customView(view):
             return view
+        
         }
     }
 }
